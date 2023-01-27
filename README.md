@@ -1,6 +1,6 @@
 # RISC-V-Watch-Dog-Timer-
 
-32 Bit Watchdog Timer:
+(1). 32 Bit Watchdog Timer:
 
 (1). This module has four inputs: clk, rst, en, and an output wdt. The clk input is the clock signal that drives the timer, rst is the reset signal, and en is the enable signal. The wdt output is a signal that indicates when the timer has expired.
 
@@ -8,7 +8,7 @@
 
 (3). When the counter reaches its maximum value (32'h3fffffff), the wdt signal is set to 1 and the counter is reset to 0. Otherwise, the wdt signal is set to 0.
 
-Test Bench of 32 Bit Watchdog Timer:
+(2). Test Bench of 32 Bit Watchdog Timer:
 
 (1). In the testbench, I created all the necessary input regs, clk, rst, en and wire for the output, wdt. Then instantiated the module under test (uut) with these inputs and output.
 
