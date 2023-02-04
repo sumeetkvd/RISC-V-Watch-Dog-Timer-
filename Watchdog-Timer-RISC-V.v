@@ -1,9 +1,10 @@
-module watchdog_timer (input clk, input rst, input en, input [4:0] timeout, output reg wdt);
+module watchdog_timer (input clk, input rst, input en, input [31:0] timeout, output reg wdt);
    reg [31:0] cnt;
    always @(posedge clk) begin
       if (rst) begin
          cnt <= 32'h0;
-      end else if (en) begin
+      end 
+      else if (en) begin
          cnt <= cnt + 1;
       end
    end
@@ -11,7 +12,8 @@ module watchdog_timer (input clk, input rst, input en, input [4:0] timeout, outp
       if (cnt == timeout) begin
          wdt <= 1;
          cnt <= 32'h0;
-      end else begin
+      end 
+      else begin
          wdt <= 0;
       end
    end
